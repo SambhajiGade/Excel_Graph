@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var data = [
+        {
+          Project: "Gear Pair",
+          JJ01: "JJ01-A1B1",
+          "FEA Report": "Bevel Gear",
+          Column9: "Forged",
+          Column12: "Variant",
+          Column18: "Date",
+        },
+        {
+          Project: "Gear Pair",
+          JJ01: "Diffrential \nTorque",
+          Column3: "Application",
+          "FEA Report": "Step",
+          Column5: "GEAR",
+          Column12: "PINION",
+          Column19: "Remarks",
+        },
+        {
+          Column5: "MCS ",
+          Column6: "Tensile Side",
+          Column9: "Compression side",
+          Column12: "MCS ",
+          Column13: "Tensile Side",
+          Column16: "Compression side",
+        },
+        {
+          Column6: "Rib \n(MBS)",
+          Column7: "Root\n (MBS) ",
+          Column8: "Web\n (MBS)",
+          Column9: "Rib \n(MBS)",
+          Column10: "Root\n (MBS) ",
+          Column11: "Web\n (MBS)",
+          Column13: "Rib\n (MBS)",
+          Column14: "Root \n(MBS) ",
+          Column15: "Web\n (MBS)",
+          Column16: "Rib\n (MBS)",
+          Column17: "Root\n (MBS)",
+          Column18: "Web \n(MBS)",
+        },
+        {
+          Project: "JJ01-A1B1",
+          JJ01: 2000,
+          Column3: "2Pinion",
+          "FEA Report": "GTPR",
+          Column5: 1361,
+          Column6: 600,
+          Column7: 604,
+          Column8: 398,
+          Column9: 453,
+          Column10: 770,
+          Column11: 591,
+          Column12: 1046,
+          Column13: 426,
+          Column14: 527,
+          Column15: 366,
+          Column16: 366,
+          Column17: 433,
+          Column18: 374,
+          Column19: 9,
+        },
+        {
+          "FEA Report": "PCD",
+          Column5: 1335,
+          Column6: 589,
+          Column7: 623,
+          Column8: 0,
+          Column9: 0,
+          Column10: 766,
+          Column11: 0,
+          Column12: 1190,
+          Column13: 588,
+          Column14: 617,
+          Column15: 506,
+          Column16: 513,
+          Column17: 638,
+          Column18: 582,
+          Column19: 15,
+        },
+        {
+          "FEA Report": "PTGR",
+          Column5: 1395,
+          Column6: 597,
+          Column7: 708,
+          Column8: 0,
+          Column9: 0,
+          Column10: 777,
+          Column11: 0,
+          Column12: 1376,
+          Column13: 869,
+          Column14: 829,
+          Column15: 0,
+          Column16: 769,
+          Column17: 1004,
+          Column18: 972,
+          Column19: 21,
+        },
+        {
+          Project: "JJ01-A1B1",
+          JJ01: 3000,
+          Column3: "2Pinion",
+          "FEA Report": "GTPR",
+          Column5: 1731,
+          Column6: 840,
+          Column7: 825,
+          Column8: 0,
+          Column9: 0,
+          Column10: 1037,
+          Column11: 0,
+          Column12: 1500,
+          Column13: 661,
+          Column14: 740,
+          Column15: 603,
+          Column16: 0,
+          Column17: 660,
+          Column18: 620,
+          Column19: 11,
+        },
+        {
+          "FEA Report": "PCD",
+          Column5: 1589,
+          Column6: 764,
+          Column7: 824,
+          Column8: 796,
+          Column9: 0,
+          Column10: 977,
+          Column11: 0,
+          Column12: 1391,
+          Column13: 804,
+          Column14: 826,
+          Column15: 729,
+          Column16: 700,
+          Column17: 886,
+          Column18: 851,
+          Column19: 16,
+        },
+        {
+          "FEA Report": "PTGR",
+          Column5: 1558,
+          Column6: 765,
+          Column7: 881,
+          Column8: 598,
+          Column9: 507,
+          Column10: 961,
+          Column11: 777,
+          Column12: 1536,
+          Column13: 1066,
+          Column14: 1034,
+          Column15: 930,
+          Column16: 0,
+          Column17: 1236,
+          Column18: 1233,
+          Column19: 21,
+        },
+        {
+          Project: "JJ01-A1B1",
+          JJ01: 4000,
+          Column3: "2Pinion",
+          "FEA Report": "GTPR",
+          Column5: 1747,
+          Column6: 1051,
+          Column7: 1023,
+          Column8: 700,
+          Column9: 756,
+          Column10: 1272,
+          Column11: 1042,
+          Column12: 1587,
+          Column13: 852,
+          Column14: 913,
+          Column15: 808,
+          Column16: 733,
+          Column17: 877,
+          Column18: 844,
+          Column19: 11,
+        },
+        {
+          "FEA Report": "PCD",
+          Column5: 1787,
+          Column6: 975,
+          Column7: 1009,
+          Column8: 685,
+          Column9: 664,
+          Column10: 1184,
+          Column11: 981,
+          Column12: 1607,
+          Column13: 977,
+          Column14: 1005,
+          Column15: 932,
+          Column16: 848,
+          Column17: 1095,
+          Column18: 1079,
+          Column19: 16,
+        },
+        {
+          "FEA Report": "PTGR",
+          Column5: 1692,
+          Column6: 917,
+          Column7: 1031,
+          Column8: 707,
+          Column9: 613,
+          Column10: 1132,
+          Column11: 931,
+          Column12: 1642,
+          Column13: 1221,
+          Column14: 1181,
+          Column15: 1076,
+          Column16: 1076,
+          Column17: 1387,
+          Column18: 1406,
+          Column19: 21,
+        },
+        {
+          Project: "JJ01-A1B1",
+          JJ01: 5000,
+          Column3: "2Pinion",
+          "FEA Report": "GTPR",
+          Column5: 1949,
+          Column6: 1313,
+          Column7: 1234,
+          Column8: 861,
+          Column9: 931,
+          Column10: 1516,
+          Column11: 1272,
+          Column12: 1747,
+          Column13: 1038,
+          Column14: 1112,
+          Column15: 1004,
+          Column16: 888,
+          Column17: 1046,
+          Column18: 1038,
+          Column19: 12,
+        },
+        {
+          "FEA Report": "PCD",
+          Column5: 1952,
+          Column6: 1183,
+          Column7: 1191,
+          Column8: 836,
+          Column9: 782,
+          Column10: 1388,
+          Column11: 1179,
+          Column12: 1785,
+          Column13: 1156,
+          Column14: 1194,
+          Column15: 1135,
+          Column16: 1008,
+          Column17: 1299,
+          Column18: 1303,
+          Column19: 16,
+        },
+        {
+          "FEA Report": "PTGR",
+          Column5: 1820,
+          Column6: 1110,
+          Column7: 1189,
+          Column8: 845,
+          Column9: 726,
+          Column10: 1312,
+          Column11: 1096,
+          Column12: 1803,
+          Column13: 1455,
+          Column14: 1381,
+          Column15: 1279,
+          Column16: 1262,
+          Column17: 1632,
+          Column18: 1659,
+          Column19: 20,
+        },
+        {
+          Project: "JJ01-A1B1",
+          JJ01: 6000,
+          Column3: "2Pinion",
+          "FEA Report": "GTPR",
+          Column5: 2113,
+          Column6: 1555,
+          Column7: 1444,
+          Column8: 1013,
+          Column9: 1119,
+          Column10: 1754,
+          Column11: 1501,
+          Column12: 1939,
+          Column13: 1236,
+          Column14: 1285,
+          Column15: 1203,
+          Column16: 1042,
+          Column17: 1238,
+          Column18: 1215,
+          Column19: 12,
+        },
+        {
+          "FEA Report": "PCD",
+          Column5: 2103,
+          Column6: 1379,
+          Column7: 1373,
+          Column8: 968,
+          Column9: 922,
+          Column10: 1592,
+          Column11: 1368,
+          Column12: 1956,
+          Column13: 1359,
+          Column14: 1375,
+          Column15: 1344,
+          Column16: 1179,
+          Column17: 1501,
+          Column18: 1524,
+          Column19: 16,
+        },
+        {
+          "FEA Report": "PTGR",
+          Column5: 1990,
+          Column6: 1272,
+          Column7: 1356,
+          Column8: 980,
+          Column9: 819,
+          Column10: 1492,
+          Column11: 1255,
+          Column12: 1950,
+          Column13: 1672,
+          Column14: 1578,
+          Column15: 1479,
+          Column16: 1446,
+          Column17: 1847,
+          Column18: 1910,
+          Column19: 20,
+        },
+        {
+          Project: "JJ01-A1B1",
+          JJ01: 4500,
+          Column3: "2Pinion",
+          "FEA Report": "GTPR",
+          Column5: 1858,
+          Column6: 1188,
+          Column7: 1137,
+          Column8: 785,
+          Column9: 850,
+          Column10: 1395,
+          Column11: 1151,
+          Column12: 1669,
+          Column13: 958,
+          Column14: 1030,
+          Column15: 911,
+          Column16: 811,
+          Column17: 968,
+          Column18: 940,
+          Column19: 12,
+        },
+        {
+          "FEA Report": "PCD",
+          Column5: 1883,
+          Column6: 1075,
+          Column7: 1100,
+          Column8: 763,
+          Column9: 721,
+          Column10: 1286,
+          Column11: 1081,
+          Column12: 1704,
+          Column13: 1078,
+          Column14: 1108,
+          Column15: 1044,
+          Column16: 943,
+          Column17: 1197,
+          Column18: 1201,
+          Column19: 16,
+        },
+        {
+          "FEA Report": "PTGR",
+          Column5: 1758,
+          Column6: 1020,
+          Column7: 1116,
+          Column8: 781,
+          Column9: 669,
+          Column10: 1224,
+          Column11: 1019,
+          Column12: 1737,
+          Column13: 1346,
+          Column14: 1286,
+          Column15: 1186,
+          Column16: 1176,
+          Column17: 1516,
+          Column18: 1545,
+          Column19: 20,
+        },
+        {
+          Project: "JJ01-A1B1",
+          JJ01: 5500,
+          Column3: "2Pinion",
+          "FEA Report": "GTPR",
+          Column5: 2034,
+          Column6: 1443,
+          Column7: 1336,
+          Column8: 944,
+          Column9: 1035,
+          Column10: 1636,
+          Column11: 1393,
+          Column12: 1828,
+          Column13: 1144,
+          Column14: 1214,
+          Column15: 1108,
+          Column16: 965,
+          Column17: 1148,
+          Column18: 1138,
+          Column19: 12,
+        },
+        {
+          "FEA Report": "PCD",
+          Column5: 2035,
+          Column6: 1291,
+          Column7: 1282,
+          Column8: 908,
+          Column9: 859,
+          Column10: 1490,
+          Column11: 1276,
+          Column12: 1880,
+          Column13: 1294,
+          Column14: 1290,
+          Column15: 1247,
+          Column16: 1109,
+          Column17: 1400,
+          Column18: 1426,
+          Column19: 16,
+        },
+        {
+          "FEA Report": "PTGR",
+          Column5: 1899,
+          Column6: 1201,
+          Column7: 1273,
+          Column8: 917,
+          Column9: 771,
+          Column10: 1408,
+          Column11: 1184,
+          Column12: 1886,
+          Column13: 1563,
+          Column14: 1482,
+          Column15: 1387,
+          Column16: 1354,
+          Column17: 1746,
+          Column18: 1799,
+          Column19: 20,
+        },
+      ];
+
+      let B1 = false;
+      let B2 = false;
+      let B3 = false;
+
+      
+
+      let Array = [];
+      let A = 0;
+
+      for (let i = 4; i < data.length; i = i + 3) {
+        let t = i;
+
+        let obj1 = data[t];
+
+        let obj2 = data[t + 1];
+
+        let obj3 = data[t + 2];
+
+        let arr3 = [];
+      let arr2 = [];
+      let arr1 = [];
+
+        let l = 0;
+        let m = 0;
+        let n = 0;
+
+        for (let key1 in obj1) {
+          if (key1 == "Column6") {
+            B1 = true;
+          }
+
+          if (key1 == "Column19") {
+            B1 = false;
+          }
+
+          if (B1) {
+            if (key1 == "Column12" || key1 == "Column19") {
+              // arr1[l] = obj1[key1];
+              // // console.log(key1 + " : " + arr1[l]);
+              // l++;
+            }
+            else{
+              arr1[l] = obj1[key1];
+              // console.log(key1 + " : " + arr1[l]);
+              l++;
+            }
+          }
+        }
+
+        for (let key2 in obj2) {
+          if (key2 == "Column6") {
+            B2 = true;
+          }
+
+          if (key2 == "Column19") {
+            B2 = false;
+          }
+
+          if (B2) {
+            if (key2 == "Column12" || key2 == "Column19") {
+              // arr2[m] = obj2[key2];
+              // // console.log(key2 + " : " + arr2[m]);
+              // m++;
+            }
+            else{
+              arr2[m] = obj2[key2];
+              // console.log(key2 + " : " + arr2[m]);
+              m++;
+            }
+          }
+        }
+
+        for (let key3 in obj3) {
+          if (key3 == "Column6") {
+            B3 = true;
+          }
+
+          if (key3 == "Column19") {
+            B3 = false;
+          }
+
+          if (B3) {
+            if (key3 == "Column12" || key3 == "Column19") {
+              // arr3[n] = obj3[key3];
+              // console.log(key3 + " : " + arr3[n]);
+              // n++;
+            }
+            else{
+              arr3[n] = obj3[key3];
+              // console.log(key3 + " : " + arr3[n]);
+              n++;
+            }
+          }
+        }
+
+        // console.log("arr1 : ",arr1);
+        // console.log("arr2 : ",arr2);
+        // console.log("arr3 : ",arr3);
+        let Arr1 = [];
+
+        for(let e=0;e<arr1.length;e+=3){
+          let g=0;
+          for(let f = e ;f<e+3;f++){
+            Arr1[g]=arr1[f];
+            g++;
+            Arr1[g]=arr2[f];
+            g++;
+            Arr1[g]=arr3[f];
+            g++;
+          }
+
+          // console.log("Type : ",Arr)
+          //  let IntArr1 = Arr.map(Number)
+          // let IntArr1 =[];
+          // Arr.forEach( ele => IntArr1.push(+ele))
+
+          // var IntArr1 = Arr.reduce( (acc, x ) => acc.concat(+x), [])
+
+      //     function toNumber(value) {
+      //    return Number(value);
+      // }
+      //     var IntArr1 = Arr.map(toNumber);
+ 
+      // let IntArr1 = Math.floor(Arr1);
+
+//       var IntArr1 = Arr1.split(',').map(function(item) {
+//     return parseInt(item, 10);
+// });
+
+          // IntArr1.sort()
+//           IntArr1.sort(function(a, b) {
+//   return a - b;
+
+
+// });
+
+let IntArr1 = Arr1.sort((a, b) => {
+  
+
+  return Number(a) < Number(b) ? -1 : Number(a) > Number(b) ? 1 : 0;
+});
+
+          console.log("Arr : ",IntArr1)
+          Array[A]=IntArr1[IntArr1.length-1];
+            A++;
+
+        }
+
+
+    
+
+
+
+        // arr1[u1]==obj1.Column6;
+        // arr1[u1++]=obj1.Column7;
+        // arr1[u1++]=obj1.Column8;
+
+        //     if(p>4){
+        // console.log("key is : ",key)
+        //key="Column6";
+        //  arr[u]= obj1[key]
+        //  u++;
+      }
+
+
+        console.log("Final Array : " , Array)
+
+
+      // p++
+
+      //     }
+      //   }
+
+      // console.log("Array : ",Array);
+
+      // console.log(arr);
+      // console.log(arr1);
+
+      /*
+let p=0;
+let q=0;
+let x =0;
+
+let arr = [];
+
+for (let i = 4; i < data.length; i=i+3){
+  console.log("array index: " + i);
+// 
+  
+for(let t=i;t<i+3;t++){
+   let obj = data[t];
+   for(let key in obj){
+
+   if(t%3==1){
+   
+
+    if(p>i){
+        if(x>2){
+        continue;
+    }
+    arr[x]=obj[key];
+    x++;
+
+   
+    }
+
+    p++;
+    // if(p==17){
+    //     break;
+    // }
+
+   }
+   else{
+// console.log("x is : ",x)
+    if(q>1){
+       arr[x]=obj.key;
+       x++; 
+    }
+    
+    q++;
+
+   }
+
+   }
+}   
+
+// console.log(" key is- " + key + ": " + value);
+  }
+
+  
+
+console.log(arr)
+
+*/
+
+      // let i1=0;
+      // for (let i = 4; i < data.length; i++){
+      //   console.log("array index: " + i);
+      //   let obj = data[i];
+      //   for (let key in obj){
+      //    if(i1<)
+      //     i1++;
+      //     let value = obj[key];
+      // console.log(" key is- " + key + ": " + value);
+      //   }
+      // }
+
+      let mcs1 = [];
+      let mcs2 = [];
+      let m1 = [];
+      let m2 = [];
+
+      let y = 0;
+      let z = 0;
+      let my = 0;
+      let mz = 0;
+
+      for (let i = 4; i < data.length; i++) {
+        // console.log("mcs1 is : ",data[i].Column5)
+        // console.log("i : ",i)
+        if (y < 3) {
+          m1[y] = data[i].Column5;
+          y++;
+        } else {
+          y = 0;
+          //console.log("m1 : ",m1)
+          m1.sort();
+          // console.log("m1 : ",m1)
+          mcs1[my] = m1[m1.length - 1];
+          my++;
+          i--;
+        }
+
+        //    console.log("i : ",i)
+        if (z < 3) {
+          m2[z] = data[i].Column12;
+          z++;
+        } else {
+          z = 0;
+          m2.sort();
+          // console.log("m2 : ",m2)
+          mcs2[mz] = m2[m2.length - 1];
+          mz++;
+        }
+      }
+
+      m1.sort();
+      mcs1[my] = m1[m1.length - 1];
+
+      m2.sort();
+      mcs2[mz] = m2[m2.length - 1];
+      // console.log("mcs1 : ",mcs1)
+      //  console.log("mcs2 ; ",mcs2)
+
+      console.log("sam");
+      // console.log(data)
+
+      // for (let i = 4; i < data.length; i++){
+      //   //console.log("array index: " + i);
+      //   let obj = data[i];
+      //   for (let key in obj){
+
+      //     let value = obj[key];
+      //     console.log(" key is- " + key + ": " + value);
+      //   }
+      // }
+
+      // data.forEach((item) => {
+      //   console.log('ID: ' + item.Column5);
+      //   console.log('MSG: ' + item.Column6);
+      //   console.log('TID: ' + item.Column57);
+      //   console.log('FROMWHO: ' + item.Column8);
+      // });
+
+      // var iterateData =function(data){   for (var key in data) {
+      //        if (data.hasOwnProperty(key)) {
+      //           console.log(data[key].Column10);
+      //        }
+      //     }};
+
+      //     iterateData(data)
+      console.log("sam2");
+    </script>
+  </body>
+</html>
